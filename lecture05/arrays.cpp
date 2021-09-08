@@ -95,5 +95,48 @@ int main(int argc, char* argv[]) {
   }
   std::cout << std::endl;
 
+  // There's an additional "safe" access method for vectors: .at()
+  // It will throw an exception, rather than just segfaulting
+  // Not available for std::array
+  std::cout << "vec2.at(2): " << vec2.at(2) << std::endl;
+  // Kaboom! Possible segfault for accessing out-of-bounds element
+  //std::cout << "vec2[100]: " << vec2[100] << std::endl;
+  // Kaboom! Thrown exception for out-of-bounds access:
+  // vector::_M_range_check: __n (which is 100) >= this->size() (which is 10)
+  // You could "catch" this exception and handle it, returning useful feedback
+  // to the user
+  //std::cout << "vec2.at(100): " << vec2.at(100) << std::endl;
+
+  // 2D arrays/vectors? Just an array of arrays / vector of vectors
+  // Each element of the outer vector is a vector, and each element of the
+  // inner vector is a float
+  std::vector<std::vector<float>> vec_2d(5, std::vector<float>(5));
+  // Use the "typedef" keyword to make life easier!
+  typedef std::vector<std::vector<float>> vector2d;
+  // It's just an alias
+  vector2d vec_2d_2(10, std::vector<float>(10));
+
+  // Element access
+  std::cout << "vec_2d[2][2]: " << vec_2d[2][2] << std::endl;
+  std::cout << "vec_2d.at(2).at(2): " << vec_2d.at(2).at(2) << std::endl;
+  // Outer vector
+  std::cout << "vec_2d.size(): " << vec_2d.size() << std::endl;
+  // Inner vector (1 row or 1 column depending on your preference)
+  std::cout << "vec_2d[0].size(): " << vec_2d[0].size() << std::endl;
+  // How do we loop over 2D containers?
+  // Range-based
+  for (auto vi : vec_2d) {
+    for (auto vj : vi) {
+      std::cout << vj << " ";
+    }
+  }
+  std::cout << std::endl;
+  // Using indices
+  for (std::size_t i=0;i < vec_2d.size();++i) {
+    for (std::size_t j=0;j < vec_2d[i].size();++j) {
+      std::cout << vec_2d[i][j] << " ";
+    }
+  }
+  std::cout << std::endl;
   return 0;
 }
