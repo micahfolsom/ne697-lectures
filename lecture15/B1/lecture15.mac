@@ -1,0 +1,20 @@
+# Optional, by default it uses just 1 (it will show up as 2, 1 for the master,
+# 1 for the worker)
+#/run/numberOfThreads 4
+# Always need to do this first
+/run/initialize
+
+# Gamma, 511 keV, N=100,000
+/gun/particle gamma
+/gun/energy 511 keV
+/run/beamOn 100000
+
+# Neutron, 2 MeV, N=100,000
+/gun/particle neutron
+/gun/energy 2 MeV
+/run/beamOn 100000
+
+# e-, 1 MeV, N=100,000
+/gun/particle e-
+/gun/energy 1 MeV
+/run/beamOn 100000
