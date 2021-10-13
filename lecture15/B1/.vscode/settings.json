@@ -1,0 +1,5 @@
+{
+    "cmake.debugConfig": {
+        "args": ["run1.mac"]
+    }
+}
