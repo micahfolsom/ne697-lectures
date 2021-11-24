@@ -1,0 +1,13 @@
+# init_vis.mac
+# Set basic init stuff
+/control/execute init.mac
+
+# Initialize the run manager so we've got a geometry to show
+# Set the number of threads to 1, since we typically only need to show
+# 1 event at a time, and doing more threads makes the output harder to
+# read
+/run/numberOfThreads 1
+/run/initialize
+
+# Visualization settings
+/control/execute vis.mac

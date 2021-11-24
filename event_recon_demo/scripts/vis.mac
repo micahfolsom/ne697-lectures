@@ -1,0 +1,38 @@
+# vis.mac
+# Open a viewer
+/vis/open OGL 
+
+# General properties
+/vis/verbose warnings
+/vis/viewer/set/autoRefresh false
+
+# Open HepRep File
+#/vis/open HepRepFile
+
+# Set the visual properties
+/vis/scene/create
+/vis/drawVolume
+/vis/viewer/set/background Black
+#/vis/viewer/flush
+
+# Make the trajectories look nicer
+/vis/modeling/trajectories/create/generic
+/vis/modeling/trajectories/generic-0/default/setLineColour green
+/vis/modeling/trajectories/generic-0/default/setDrawLine true
+/vis/modeling/trajectories/generic-0/default/setDrawAuxPts true
+/vis/modeling/trajectories/generic-0/default/setDrawStepPts true
+/vis/modeling/trajectories/generic-0/default/setStepPtsSize 5
+/vis/modeling/trajectories/generic-0/default/setAuxPtsSize 5
+/vis/modeling/trajectories/generic-0/default/setAuxPtsColour yellow
+/vis/modeling/trajectories/generic-0/default/setStepPtsColour red 
+/vis/modeling/trajectories/generic-0/default/setStepPtsColour red 
+/vis/modeling/trajectories/generic-0/default/setStepPtsType circles
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+/vis/scene/add/axes 0 0 0 10 cm
+
+# Superimpose all events
+/vis/scene/endOfEventAction accumulate 100 
+
+# Re-enable auto-refresh
+/vis/viewer/set/autoRefresh true

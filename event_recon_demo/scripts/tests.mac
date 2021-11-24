@@ -1,0 +1,20 @@
+# No geometry to change, so do this first
+/run/initialize
+
+# We can just do this in 1 macro since we can change the output path!
+/gun/energy 1000 keV
+/g4t/run/save_path hits_1000keV.csv
+/run/beamOn 10000
+
+/gun/energy 100 keV
+/g4t/run/save_path hits_100keV.csv
+/run/beamOn 10000
+
+/gun/energy 5 keV
+/g4t/run/save_path hits_5keV.csv
+/run/beamOn 10000
+
+/gun/particle ion
+/gun/ion 55 137
+/g4t/run/save_path hits_cs137.csv
+/run/beamOn 10000
