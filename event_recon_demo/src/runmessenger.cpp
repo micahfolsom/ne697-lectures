@@ -14,14 +14,14 @@ namespace g4t {
       m_saveDataCmd->SetGuidance("Toggle saving data to file.");
       m_saveDataCmd->SetParameterName("save_data", true);
       m_saveDataCmd->SetDefaultValue(m_runAction->save_data());
-      m_saveDataCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
+      m_saveDataCmd->AvailableForStates(G4State_Idle);
 
       // Save file path: /ne697/run/save_path
       m_savePathCmd = new G4UIcmdWithAString("/ne697/run/save_path", this);
       m_savePathCmd->SetGuidance("Save file path.");
       m_savePathCmd->SetParameterName("save_path", true);
       m_savePathCmd->SetDefaultValue(m_runAction->get_path());
-      m_savePathCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
+      m_savePathCmd->AvailableForStates(G4State_Idle);
     }
 
   RunMessenger::~RunMessenger() {
