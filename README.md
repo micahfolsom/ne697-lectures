@@ -19,3 +19,6 @@ the final projects were determined by the students themselves.
 [Assignment descriptions](assignments/)
 
 Demo code associated with individual lectures is in its respective directory.
+
+The Geant4 code we built in class, from scratch, is in another repository found
+[here](https://github.com/micahfolsom/g4-ne697).
