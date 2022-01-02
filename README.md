@@ -14,7 +14,7 @@ the final projects were determined by the students themselves.
 
 ## Directory ##
 
-[Lecture slides](lectures/)
+[Lecture slides](slides/)
 
 [Assignment descriptions](assignments/)
 
